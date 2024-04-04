@@ -8,20 +8,15 @@ import org.springframework.boot.runApplication
 class KotlinCoroutinesApplication
 
 @OptIn(DelicateCoroutinesApi::class)
-fun main(args: Array<String>) {
+fun main(args: Array<String>) = runBlocking { //코루틴 안에서는 runBlocking{} 의 사용은 권장 되지 않으며, 일반 적인 함수 코드 블록에서 중단 함수를 호출할 수 있도록 하기 위해 사용
 
     //GlobalScope.launch = 코루틴을 생성하기 위한 코루틴 빌더
     GlobalScope.launch {
         delay(1000L)
         println("World!")
     }
+
     println("Hello,")
-
-    //runBlocking 블록은 주어진 블록이 완료될 때까지 현재 스레드를 멈추는 새로운 코루틴을 생성하여 실행하는 코루틴 빌더 (명시적으로 스레드를 멈추게 할 수 있다는 것도 나타냄)
-    runBlocking {
-        delay(2000L)
-    }
-
-    //Suspend function 'delay' should be called only from a coroutine or another suspend function
-    //delay(2000L)
+    //코루틴 안에서만 사용 가능
+    delay(2000L)
 }
