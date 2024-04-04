@@ -19,5 +19,5 @@ fun main(args: Array<String>) {
         println("World!")
     }
     println("Hello,")
-//    Thread.sleep(2000L)
+    Thread.sleep(2000L)
 }
