@@ -1,9 +1,6 @@
 package org.kotlincoroutines
 
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
@@ -19,5 +16,9 @@ fun main(args: Array<String>) {
         println("World!")
     }
     println("Hello,")
-    Thread.sleep(2000L)
+
+    //runBlocking 블록은 주어진 블록이 완료될 때까지 현재 스레드를 멈추는 새로운 코루틴을 생성하여 실행하는 코루틴 빌더 (명시적으로 스레드를 멈추게 할 수 있다는 것도 나타냄)
+    runBlocking {
+        delay(2000L)
+    }
 }
