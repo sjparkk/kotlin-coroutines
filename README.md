@@ -10,3 +10,7 @@
 * SpringBoot 3.2.4
 * Java 17, Kotlin 1.9.23
 * Gradle 8.7
+
+## Docs
+***
+* 코틀린 코루틴 공식 문서 - https://kotlinlang.org/docs/coroutines-overview.html
