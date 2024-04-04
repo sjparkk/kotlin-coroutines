@@ -21,4 +21,7 @@ fun main(args: Array<String>) {
     runBlocking {
         delay(2000L)
     }
+
+    //Suspend function 'delay' should be called only from a coroutine or another suspend function
+    //delay(2000L)
 }
